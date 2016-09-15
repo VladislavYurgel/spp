@@ -1,0 +1,6 @@
+D:\BSUIR\СПП\Лабы\Tracer\Tracer\bin\Debug\Tracer.exe.config
+D:\BSUIR\СПП\Лабы\Tracer\Tracer\bin\Debug\Tracer.exe
+D:\BSUIR\СПП\Лабы\Tracer\Tracer\bin\Debug\Tracer.pdb
+D:\BSUIR\СПП\Лабы\Tracer\Tracer\obj\Debug\Tracer.csprojResolveAssemblyReference.cache
+D:\BSUIR\СПП\Лабы\Tracer\Tracer\obj\Debug\Tracer.exe
+D:\BSUIR\СПП\Лабы\Tracer\Tracer\obj\Debug\Tracer.pdb

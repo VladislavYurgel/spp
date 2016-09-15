@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <thread id="1" time="122ms">
+    <method name="Main" time="0" package="Program" paramsCount="1" />
+    <method name="Main" time="51" package="Program" paramsCount="1">
+      <method name="someMethod" time="50" package="Program" paramsCount="2">
+        <method name="1231232" time="40" package="Program" paramsCount="3" />
+      </method>
+    </method>
+    <method name="methodInSomeClass" time="71" package="SomeClass" paramsCount="0">
+      <method name="anotherMethodinSomeClass" time="60" package="SomeClass" paramsCount="0">
+        <method name="newMethod" time="15" package="SomeClass" paramsCount="0">
+          <method name="newSomeMethod" time="0" package="SomeClass" paramsCount="0" />
+        </method>
+      </method>
+    </method>
+  </thread>
+  <thread id="3" time="1024ms">
+    <method name="anotherMethod" time="1024" package="Program" paramsCount="0" />
+  </thread>
+</root>

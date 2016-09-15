@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <thread id="1" time="122ms">
+    <method name="Main" time="0ms" package="Program" paramsCount="1" />
+    <method name="Main" time="51ms" package="Program" paramsCount="1">
+      <method name="someMethod" time="50ms" package="Program" paramsCount="2">
+        <method name="kekMethod" package="Program" time="40ms" paramsCount="3"/>
+      </method>
+    </method>
+    <method name="methodInSomeClass" time="71ms" package="SomeClass" paramsCount="0">
+      <method name="anotherMethodinSomeClass" time="60ms" package="SomeClass" paramsCount="0">
+        <method name="newMethod" time="15ms" package="SomeClass" paramsCount="0">
+          <method name="newSomeMethod" time="0ms" package="SomeClass" paramsCount="0" />
+        </method>
+      </method>
+    </method>
+  </thread>
+  <thread id="2" time="232ms">
+    <method name="Main" time="0ms" package="Program" paramsCount="1" />
+    <method name="Main" time="51ms" package="Program" paramsCount="1">
+      <method name="someMethod" time="191ms" package="Program" paramsCount="2">
+        <method name="kekMethod" package="Program" time="40ms" paramsCount="3"/>
+      </method>
+    </method>
+    <method name="methodInSomeClass" time="71ms" package="SomeClass" paramsCount="0">
+      <method name="anotherMethodinSomeClass" time="124ms" package="SomeClass" paramsCount="0">
+        <method name="newMethod" time="15ms" package="SomeClass" paramsCount="0">
+          <method name="newSomeMethod" time="0ms" package="SomeClass" paramsCount="0" />
+        </method>
+      </method>
+    </method>
+  </thread>
+  <thread id="3" time="32ms">
+    <method name="anotherMethod" time="32ms" package="Program" paramsCount="0" />
+  </thread>
+</root>
