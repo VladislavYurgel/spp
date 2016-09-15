@@ -8,3 +8,13 @@ D:\BSUIR\СПП\Лабы\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinFor
 D:\BSUIR\СПП\Лабы\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.exe
 D:\BSUIR\СПП\Лабы\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.pdb
 D:\BSUIR\СПП\Лабы\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.ChangeNode.resources
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\bin\Debug\Tracer_WinForms.exe.config
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.exe
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.pdb
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\bin\Debug\Tracer_WinForms.exe
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\bin\Debug\Tracer_WinForms.pdb
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.csprojResolveAssemblyReference.cache
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.ChangeNode.resources
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.Form1.resources
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.Properties.Resources.resources
+D:\BSUIR\СПП\Лабы\spp\Tracer_WinForms\Tracer_WinForms\obj\Debug\Tracer_WinForms.csproj.GenerateResource.Cache

@@ -78,62 +78,67 @@ namespace Tracer_WinForms
             openFileDialog.CheckFileExists = true;
             openFileDialog.Filter = "XML Files (*.xml)|*.xml";
             openFileDialog.Multiselect = false;
-            TreeView currentTree;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string xmlText = File.ReadAllText(openFileDialog.FileName);
-                XMLParser xmlParser = new XMLParser();
-                if (!fileNames.Exists(x => x.fileName == openFileDialog.FileName))
-                {
-                    if (createdTab || (tabControl1.TabCount <= 0))
-                    {
-                        createNewTab();
-                        tabControl1.SelectedTab = tabControl1.TabPages[tabControl1.TabCount - 1];
-                        createdTab = true;
-                    }
-                    else
-                        createdTab = true;
-                    tabControl1.TabPages[tabControl1.SelectedIndex].Text = Path.GetFileName(openFileDialog.FileName);
-                }
-                else
-                {
-                    MessageBox.Show("This file is open");
-                    return;
-                }
-                myFile tempFile = new myFile();
-                tempFile.fileName = openFileDialog.FileName;
-                tempFile.shortFileName = Path.GetFileName(openFileDialog.FileName);
-                fileNames.Add(tempFile);
+                openFile(openFileDialog.FileName);
+            }
+        }
 
-                if (traceList[tabControl1.SelectedIndex] != null)
+        private void openFile(string fileName, bool currentTab = false)
+        {
+            TreeView currentTree;
+            string xmlText = File.ReadAllText(fileName);
+            XMLParser xmlParser = new XMLParser();
+            if (!fileNames.Exists(x => x.fileName == fileName))
+            {
+                if ((createdTab || (tabControl1.TabCount <= 0)) && !currentTab)
                 {
-                    //DialogResult result = ConfirmWindow(MessageBoxButtons.YesNo);
-                    //if (result == DialogResult.Yes)
-                    //{
-                        traceList[tabControl1.SelectedIndex] = null;
-                        traceList[tabControl1.SelectedIndex] = xmlParser.Parse(xmlText);
-                        currentTree = new TreeView();
-                        if (tabControl1.SelectedTab.Controls.ContainsKey("treeView" + tabControl1.SelectedIndex))
-                            currentTree = (TreeView)tabControl1.SelectedTab.Controls["treeView" + tabControl1.SelectedIndex];
-                        MyTree myTree = new MyTree();
-                        currentTree.Nodes.Clear();
-                        myTree.GenerateTree(traceList[tabControl1.SelectedIndex], currentTree);
-                        currentTree.ExpandAll();
-                        currentTree.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(treeNodeClick);
-                    //}
+                    createNewTab();
+                    tabControl1.SelectedTab = tabControl1.TabPages[tabControl1.TabCount - 1];
+                    createdTab = true;
                 }
                 else
-                {
-                    traceList[tabControl1.SelectedIndex] = xmlParser.Parse(xmlText);
-                    currentTree = new TreeView();
-                    if (tabControl1.SelectedTab.Controls.ContainsKey("treeView" + tabControl1.SelectedIndex))
-                        currentTree = (TreeView)tabControl1.SelectedTab.Controls["treeView" + tabControl1.SelectedIndex];
-                    MyTree myTree = new MyTree();
-                    currentTree.Nodes.Clear();
-                    myTree.GenerateTree(traceList[tabControl1.SelectedIndex], currentTree);
-                    currentTree.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(treeNodeClick);
-                    currentTree.ExpandAll();
-                }
+                    createdTab = true;
+                tabControl1.TabPages[tabControl1.SelectedIndex].Text = Path.GetFileName(fileName);
+            }
+            else
+            {
+                MessageBox.Show("This file is open");
+                return;
+            }
+            myFile tempFile = new myFile();
+            tempFile.fileName = fileName;
+            tempFile.shortFileName = Path.GetFileName(fileName);
+            fileNames.Add(tempFile);
+
+            if (traceList[tabControl1.SelectedIndex] != null)
+            {
+                //DialogResult result = ConfirmWindow(MessageBoxButtons.YesNo);
+                //if (result == DialogResult.Yes)
+                //{
+                traceList[tabControl1.SelectedIndex] = null;
+                traceList[tabControl1.SelectedIndex] = xmlParser.Parse(xmlText);
+                currentTree = new TreeView();
+                if (tabControl1.SelectedTab.Controls.ContainsKey("treeView" + tabControl1.SelectedIndex))
+                    currentTree = (TreeView)tabControl1.SelectedTab.Controls["treeView" + tabControl1.SelectedIndex];
+                MyTree myTree = new MyTree();
+                currentTree.Nodes.Clear();
+                myTree.GenerateTree(traceList[tabControl1.SelectedIndex], currentTree);
+                currentTree.ExpandAll();
+                currentTree.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(treeNodeClick);
+                //}
+            }
+            else
+            {
+                traceList[tabControl1.SelectedIndex] = xmlParser.Parse(xmlText);
+                currentTree = new TreeView();
+                if (tabControl1.SelectedTab.Controls.ContainsKey("treeView" + tabControl1.SelectedIndex))
+                    currentTree = (TreeView)tabControl1.SelectedTab.Controls["treeView" + tabControl1.SelectedIndex];
+                MyTree myTree = new MyTree();
+                currentTree.Nodes.Clear();
+                myTree.GenerateTree(traceList[tabControl1.SelectedIndex], currentTree);
+                currentTree.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(treeNodeClick);
+                currentTree.ExpandAll();
             }
         }
 
@@ -203,14 +208,16 @@ namespace Tracer_WinForms
                     {
                         currentTree = (TreeView)tabControl1.SelectedTab.Controls["treeView" + tabControl1.SelectedIndex];
                         if (currentTree.Nodes.Count > 0)
+                        {
                             xmlParse.Build(currentTree, fileName);
+                            tabControl1.SelectedTab.Text = Regex.Replace(tabControl1.SelectedTab.Text, @"\*$", "");
+                            if (fileNames.Exists(x => x.shortFileName == tabControl1.SelectedTab.Text))
+                                fileNames.Remove(fileNames.Find(x => x.shortFileName == tabControl1.SelectedTab.Text));
+                            openFile(fileName, true);
+                        }
                         else
                             MessageBox.Show("Current treeview is empty");
                     }
-
-                    tabControl1.SelectedTab.Text = Regex.Replace(tabControl1.SelectedTab.Text, @"\*$", "");
-                    if (fileNames.Exists(x => x.shortFileName == tabControl1.SelectedTab.Text))
-                        fileNames.Remove(fileNames.Find(x => x.shortFileName == tabControl1.SelectedTab.Text));
                 }
             }
             else
