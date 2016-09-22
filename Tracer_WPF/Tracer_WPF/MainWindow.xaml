@@ -5,21 +5,16 @@
         WindowStyle="None"
         AllowsTransparency="true"
         WindowState="Maximized"
-        Title="Tracer WCF" Height="450" Width="725" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Storyboard x:Key="sbShowMenu">
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-150,0,0,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
-        </Storyboard>
-        <Storyboard x:Key="sbHideMenu">
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0" To="-150,0,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
-        </Storyboard>
-    </Window.Resources>
+        Title="Tracer WCF" Height="450" Width="1920" WindowStartupLocation="CenterScreen">
     <Grid Background="#34495e">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Name="MenuColumn" Width="1*">
+            <ColumnDefinition Name="MenuColumn" Width="0.5*">
             </ColumnDefinition>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel>
+            
+        </StackPanel>
         <TextBlock Grid.Column="1" Text="Dashboard" Foreground="White" FontFamily="Microsoft YaHei UI Light" Margin="55 45" FontSize="15" Width="100" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
         <Rectangle Grid.Column="0">
             <Rectangle.Fill>
@@ -29,6 +24,9 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <TextBlock Grid.Column="0" x:Name="btnSaveFileAs" Text="Save file as..." Cursor="Hand" Foreground="White" FontFamily="Microsoft YaHei UI Light" Margin="55 180" FontSize="13" Width="100" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" x:Name="btnSaveFile" Text="Save file" Cursor="Hand" Foreground="White" FontFamily="Microsoft YaHei UI Light" Margin="55 145" FontSize="13" Width="100" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" x:Name="btnOpenFile" Text="Open file" Cursor="Hand" Foreground="White" FontFamily="Microsoft YaHei UI Light" Margin="55 110" FontSize="13" Width="100" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Grid.Column="0" Text="Menu" Foreground="White" FontFamily="Microsoft YaHei UI Light" Margin="55 45" FontSize="15" Width="100" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
         <Border Grid.Column="0" BorderThickness="0 0 1 0" BorderBrush="#000" Opacity="0.3">
             <Border.Effect>

@@ -11,55 +11,52 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Tracer_WPF
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Tracer.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Tracer : Window
     {
         private static GridLength menuLength;
-        private static ColumnDefinition menuMargin;
         private static bool menuIsOpen = false;
-
-        public MainWindow()
+        public Tracer()
         {
             InitializeComponent();
-            this.WindowState = WindowState.Maximized;
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-        }
-
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
-        {
-
         }
 
         private void gearImage_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (!menuIsOpen)
             {
-                menuLength = MenuColumn.Width;
-                MenuColumn.Width = new GridLength(60, GridUnitType.Pixel);
-                btnToRight(btnOpenFile);
-                btnToRight(btnSaveFile);
+                ShowHideMenu("sbShowMenu", MenuLeft);
                 menuIsOpen = true;
             }
             else
             {
-                MenuColumn.Width = menuLength;
+                ShowHideMenu("sbHideMenu", MenuLeft);
                 menuIsOpen = false;
             }
         }
 
-        private void btnToRight(TextBlock btn)
+        private void ShowHideMenu(string storyboard, StackPanel stackPanel)
         {
-            btn.FontSize = 10;
-            btn.Margin = new Thickness(150, btn.Margin.Top, 0, 0);
-            btn.TextAlignment = TextAlignment.Right;
-            btn.Width = 60;
+            Storyboard sb = Resources[storyboard] as Storyboard;
+            sb.Begin(stackPanel);
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Tab)
+            {
+                MouseButtonEventArgs mouseEvents = null;
+                gearImage_MouseUp(sender, mouseEvents);
+            }
+        }
+
+
     }
 }

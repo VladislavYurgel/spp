@@ -86,6 +86,11 @@ namespace Tracer_WinForms
 
         private void openFile(string fileName, bool currentTab = false)
         {
+            if (Path.GetExtension(fileName) != ".xml")
+            {
+                MessageBox.Show("Open error! This is not xml file");
+                return;
+            }
             TreeView currentTree;
             string xmlText = File.ReadAllText(fileName);
             XMLParser xmlParser = new XMLParser();
@@ -203,6 +208,11 @@ namespace Tracer_WinForms
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     fileName = saveFileDialog.FileName;
+                    if (Path.GetExtension(fileName) != ".xml")
+                    {
+                        MessageBox.Show("Save error! This is not XML file");
+                        return;
+                    }
                     XMLParser xmlParse = new XMLParser();
                     if (tabControl1.SelectedTab.Controls.ContainsKey("treeView" + tabControl1.SelectedIndex))
                     {
