@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <thread id="1" time="122ms">
+  <thread id="1" time="122">
     <method name="Main" time="0" package="Program" paramsCount="1" />
     <method name="Main" time="51" package="Program" paramsCount="1">
       <method name="someMethod" time="50" package="Program" paramsCount="2">
@@ -15,7 +15,7 @@
       </method>
     </method>
   </thread>
-  <thread id="3" time="1024ms">
+  <thread id="3" time="1024">
     <method name="anotherMethod" time="1024" package="Program" paramsCount="0" />
   </thread>
 </root>

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracer_WPF", "Tracer_WPF\Tracer_WPF.csproj", "{D476E083-569C-42E1-8CA1-F249A2BF34CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracer_WPF", "Tracer_WPF\Tracer_WPF.csproj", "{E29A20F5-1C7C-43DE-B41C-A64AABCDAD47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D476E083-569C-42E1-8CA1-F249A2BF34CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D476E083-569C-42E1-8CA1-F249A2BF34CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D476E083-569C-42E1-8CA1-F249A2BF34CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D476E083-569C-42E1-8CA1-F249A2BF34CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29A20F5-1C7C-43DE-B41C-A64AABCDAD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29A20F5-1C7C-43DE-B41C-A64AABCDAD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29A20F5-1C7C-43DE-B41C-A64AABCDAD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29A20F5-1C7C-43DE-B41C-A64AABCDAD47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
